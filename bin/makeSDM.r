@@ -31,4 +31,11 @@ makeSDM <- function(species){
   #Run maxent model and make predictions 
   myModel <- maxent(climStack, points)
   myRaster <- predict(myModel, climStack)
+  
+  #Set up return elements
+  toReturn <- list("mxaentModel" = myModel, "maxentRaster" = myRaster)
+  
   }
+
+#Example 
+modelResults <- makeSDM('Apis mellifera')
